@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Core", "DevFreela.Core\DevFreela.Core.csproj", "{B97B740C-759C-40B0-902C-10FF16D3EA9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Infrastructure.Persistence", "DevFreela.Infrastructure.Persistence\DevFreela.Infrastructure.Persistence.csproj", "{D7525298-5283-4FE4-8835-5ACCD8CC459F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B97B740C-759C-40B0-902C-10FF16D3EA9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B97B740C-759C-40B0-902C-10FF16D3EA9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B97B740C-759C-40B0-902C-10FF16D3EA9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B97B740C-759C-40B0-902C-10FF16D3EA9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7525298-5283-4FE4-8835-5ACCD8CC459F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7525298-5283-4FE4-8835-5ACCD8CC459F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7525298-5283-4FE4-8835-5ACCD8CC459F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7525298-5283-4FE4-8835-5ACCD8CC459F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7A28508-F6E9-489E-8D16-CB2B5BC6B5BB}
+	EndGlobalSection
+EndGlobal
