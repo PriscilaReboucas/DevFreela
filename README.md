@@ -1,5 +1,5 @@
 # DevFreela 
-Projeto ASPNET.CORE E DESENVOLVIMENTO DE APIs desenvolvido com os seguintes temas :
+Projeto ASPNET.CORE E DESENVOLVIMENTO DE APIs contendo com os seguintes temas :
 - ASPNET Core, HTTP, RESTful APIs
 - Arquitetura Limpa
 - CQRS
