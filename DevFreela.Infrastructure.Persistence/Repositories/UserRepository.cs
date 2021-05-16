@@ -1,5 +1,6 @@
 ﻿using DevFreela.Core.Entities;
 using DevFreela.Core.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace DevFreela.Infrastructure.Persistence.Repositories
@@ -17,6 +18,11 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
         {
             await _dbContext.Users.AddAsync(user);
             await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<User> GetUser(int id)
+        {
+            return await _dbContext.Users.SingleOrDefaultAsync(u => u.Id == id);
         }
     }
 }
