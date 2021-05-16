@@ -1,5 +1,8 @@
 ﻿namespace DevFreela.Application.Commands.LoginUser
 {
+    /// <summary>
+    /// Classe retorna as informações para o usuário que logou
+    /// </summary>
     public class LoginUserViewModel
     {
         public LoginUserViewModel(string email, string token)

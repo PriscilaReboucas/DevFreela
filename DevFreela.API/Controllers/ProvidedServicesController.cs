@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace DevFreela.API.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class ProvidedServicesController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -44,7 +44,7 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpPut("{id}/start")]
-        [Authorize(Roles = "freelancer")]
+        //[Authorize(Roles = "freelancer")]
         public async Task<IActionResult> Start(int id)
         {
             var command = new StartProvidedServiceCommand(id);
@@ -55,7 +55,7 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpPost("{id}/messages")]
-        [Authorize(Roles = "client, freelancer")]
+        //[Authorize(Roles = "client, freelancer")]
         public async Task<IActionResult> PostMessage(int id, [FromBody] CreateMessageInputModel inputModel)
         {
             var command = new CreateMessageCommand(id, inputModel.Content);

@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "d00d3cfa-bf13-4273-a40e-2420c6b6f671",
+		"name": "Formação ASP.NET Core",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ProvidedService",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imx1Y2FzLnNhbnRpQG1haWwiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJmcmVlbGFuY2VyIiwiZXhwIjoxNjA1OTkzMzA4LCJpc3MiOiJEZXZGcmVlbGEiLCJhdWQiOiJDbGllbnRGcmVlbGFuY2VycyJ9.zC02SmAwwF_ghMUSBanC69y_kN_2bv0VpKpIh9_re-E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devfreela.azurewebsites.net/api/providedservices/3",
+					"protocol": "https",
+					"host": [
+						"devfreela",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"providedservices",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Provided Service",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imx1aXMuZGV2QG1haWwiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjbGllbnQiLCJleHAiOjE2MDU5OTMzNTIsImlzcyI6IkRldkZyZWVsYSIsImF1ZCI6IkNsaWVudEZyZWVsYW5jZXJzIn0.B0JY0ZPcbMKuoi3MUEjUzm4LO7n_8PRsEPvQOAeiPeQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Freela FullStack .NET\",\r\n  \"description\": \"Sistema de Freelancers feito em .NET Core\",\r\n  \"idClient\": 1,\r\n  \"idFreelancer\": 2,\r\n  \"totalCost\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devfreela.azurewebsites.net/api/providedservices",
+					"protocol": "https",
+					"host": [
+						"devfreela",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"providedservices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "START Provided Service",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imx1Y2FzLnNhbnRpQGVtYWlsIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiZnJlZWxhbmNlciIsImV4cCI6MTYwNTk5MTM5OSwiaXNzIjoiRGV2RnJlZWxhIiwiYXVkIjoiQ2xpZW50RnJlZWxhbmNlcnMifQ.vH3DCfnQq1kOyxYa3ojBFtP3QzXaescd1m7KtPy6UGc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/providedservices/2/start",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"providedservices",
+						"2",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST MEssage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

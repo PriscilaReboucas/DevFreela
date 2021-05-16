@@ -7,5 +7,6 @@ namespace DevFreela.Core.Interfaces.Repositories
     {
         Task Add(User user);
         Task<User> GetById(int id);
+        Task<User> GetUserByLogin(string email, string password);
     }
 }
