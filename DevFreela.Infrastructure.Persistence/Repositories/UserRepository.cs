@@ -20,7 +20,7 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<User> GetUser(int id)
+        public async Task<User> GetById(int id)
         {
             return await _dbContext.Users.SingleOrDefaultAsync(u => u.Id == id);
         }

@@ -20,7 +20,7 @@ namespace DevFreela.Application.Queries.GetUser
 
         public async Task<GetUserViewModel> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetUser(request.IdUser);
+            var user = await _userRepository.GetById(request.IdUser);
 
             if (user == null)
             {

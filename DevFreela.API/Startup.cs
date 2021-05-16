@@ -1,8 +1,11 @@
 using DevFreela.API.Extensions;
+using DevFreela.API.Filters;
 using DevFreela.Application.Queries.GetUser;
+using DevFreela.Application.Validators;
 using DevFreela.Core.Interfaces.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using DevFreela.Infrastructure.Persistence.Repositories;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,13 +36,21 @@ namespace DevFreela.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(o => o.Filters.Add(typeof(ValidationFilter)))
+                 .AddFluentValidation(o =>
+                     o.RegisterValidatorsFromAssemblyContaining<CreateUserInputModelValidator>());
+
             // Configurando EF Core
             var connectionString = Configuration.GetConnectionString("DevFreela");
+
             services.AddDbContext<DevFreelaDbContext>(options => options.UseSqlServer(connectionString));
 
+            //services
+            //    .AddDbContext<DevFreelaDbContext>(options => options.UseInMemoryDatabase("DevFreela"));
+
+
             // Quando utilizar interface utilizar a sua implementação, conseguindo utilizar interface sem depender da implementação concreta.
-            // Realizando a injeção de dependência na startup. (AddRepositories)        
+            // Realizando a injeção de dependência na startup. (AddRepositories)     
 
             services
                   .AddRepositories()
@@ -59,6 +70,24 @@ namespace DevFreela.API
                     }
                 });
             });
+
+            //services
+            // .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            // .AddJwtBearer(options =>
+            // {
+            //     options.TokenValidationParameters = new TokenValidationParameters
+            //     {
+            //         ValidateIssuer = true,
+            //         ValidateAudience = true,
+            //         ValidateLifetime = true,
+            //         ValidateIssuerSigningKey = true,
+
+            //         ValidIssuer = Configuration["Jwt:Issuer"],
+            //         ValidAudience = Configuration["Jwt:Audience"],
+            //         IssuerSigningKey = new SymmetricSecurityKey
+            //       (Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+            //     };
+            // });
 
 
         }

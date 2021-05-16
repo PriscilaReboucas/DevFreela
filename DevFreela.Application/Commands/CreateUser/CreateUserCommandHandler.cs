@@ -1,4 +1,5 @@
-﻿using DevFreela.Core.Entities;
+﻿using DevFreela.Application.Commands.LoginUser;
+using DevFreela.Core.Entities;
 using DevFreela.Core.Interfaces.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
@@ -11,6 +12,7 @@ namespace DevFreela.Application.Commands.CreateUser
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, CreateUserViewModel>
     {
         private readonly IUserRepository _userRepository;
+
         public CreateUserCommandHandler(IUserRepository userRepository)
         {
             _userRepository = userRepository;
@@ -18,7 +20,12 @@ namespace DevFreela.Application.Commands.CreateUser
 
         public async Task<CreateUserViewModel> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-            var user = new User(request.Name, request.Email, request.BirthDate);
+            var user = new User(
+                request.Name,
+                request.Email,
+                request.BirthDate,
+                LoginService.ComputeSha256Hash(request.Password),
+                request.Role);
 
             await _userRepository.Add(user);
 

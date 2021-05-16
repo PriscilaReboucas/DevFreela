@@ -5,7 +5,7 @@ namespace DevFreela.Core.Entities
 {
     public class User : BaseEntity
     {
-        public User(string name, string email, DateTime birthDate) 
+        public User(string name, string email, DateTime birthDate, string password, string role) 
         {
             Name = name;
             Email = email;
@@ -15,6 +15,9 @@ namespace DevFreela.Core.Entities
             ProvidedServices = new List<ProvidedService>();
             OwningProvidedServices = new List<ProvidedService>();
             Active = true;
+            Password = password;
+            Role = role;
+
         }
 
         public string Name { get; private set; }
@@ -25,5 +28,7 @@ namespace DevFreela.Core.Entities
         public List<ProvidedService> ProvidedServices { get; private set; } // serviços que oferece
         public List<ProvidedService> OwningProvidedServices { get; private set; } // lista de servidos que ele é o dono/cliente.
         public bool Active { get; private set; }
+        public string Password { get; private set; }
+        public string Role { get; private set; }
     }
 }

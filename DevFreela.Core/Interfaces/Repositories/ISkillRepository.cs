@@ -1,11 +1,11 @@
 ﻿using DevFreela.Core.Entities;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DevFreela.Core.Interfaces.Repositories
 {
-    public interface IUserRepository
+    public interface ISkillRepository
     {
-        Task Add(User user);
-        Task<User> GetById(int id);
+        Task<List<Skill>> GetAll();
     }
 }

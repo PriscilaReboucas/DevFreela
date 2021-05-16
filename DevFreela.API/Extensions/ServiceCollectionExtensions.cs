@@ -1,10 +1,6 @@
 ﻿using DevFreela.Core.Interfaces.Repositories;
 using DevFreela.Infrastructure.Persistence.Repositories;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DevFreela.API.Extensions
 {
@@ -12,7 +8,9 @@ namespace DevFreela.API.Extensions
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
+            services.AddScoped<ISkillRepository, SkillRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IProvidedServiceRepository, ProvidedServiceRepository>();
 
             return services;
         }
