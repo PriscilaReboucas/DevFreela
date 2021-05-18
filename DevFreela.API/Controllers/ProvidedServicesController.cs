@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace DevFreela.API.Controllers
 {
     [Route("api/[controller]")]
-    //[Authorize]
+    [Authorize]
     public class ProvidedServicesController : ControllerBase
     {
         private readonly IMediator _mediator;
