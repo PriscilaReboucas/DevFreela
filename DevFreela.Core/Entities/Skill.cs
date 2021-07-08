@@ -5,7 +5,7 @@ namespace DevFreela.Core.Entities
 {
     public class Skill : BaseEntity
     {
-        protected Skill() {}
+        protected Skill() { }
 
         public Skill(string description)
         {
@@ -16,7 +16,7 @@ namespace DevFreela.Core.Entities
 
         public string Description { get; private set; }
         public DateTime CreatedAt { get; private set; }
-        
+
         // propriedade de navegação
         public List<UserSkill> UserSkills { get; private set; }
     }

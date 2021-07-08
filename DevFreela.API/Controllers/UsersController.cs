@@ -1,12 +1,8 @@
-﻿using DevFreela.API.Extensions;
-using DevFreela.Application.Commands.CreateUser;
+﻿using DevFreela.Application.Commands.CreateUser;
 using DevFreela.Application.Commands.LoginUser;
 using DevFreela.Application.Queries.GetUser;
-using DevFreela.Application.Validators;
-using DevFreela.Core.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DevFreela.API.Controllers

@@ -1,9 +1,7 @@
 ﻿using DevFreela.Application.Commands.LoginUser;
 using DevFreela.Core.Entities;
 using DevFreela.Core.Interfaces.Repositories;
-using DevFreela.Infrastructure.Persistence;
 using MediatR;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 

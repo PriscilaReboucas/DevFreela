@@ -1,8 +1,5 @@
 ﻿using DevFreela.Core.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DevFreela.Infrastructure.Persistence
 {
@@ -51,8 +48,8 @@ namespace DevFreela.Infrastructure.Persistence
             modelBuilder
              .Entity<ProvidedService>()
              .HasOne(p => p.Freelancer)
-             .WithMany(f=> f.ProvidedServices)
-             .HasForeignKey(p=> p.IdFreelancer)
+             .WithMany(f => f.ProvidedServices)
+             .HasForeignKey(p => p.IdFreelancer)
              .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder

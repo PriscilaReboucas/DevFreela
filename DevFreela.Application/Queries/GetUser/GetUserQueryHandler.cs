@@ -1,9 +1,6 @@
 ﻿using DevFreela.Core.Interfaces.Repositories;
-using DevFreela.Infrastructure.Persistence;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,7 +8,7 @@ namespace DevFreela.Application.Queries.GetUser
 {
     public class GetUserQueryHandler : IRequestHandler<GetUserQuery, GetUserViewModel> // recebe UserQuery e retorna ViewModel
     {
-     
+
         private readonly IUserRepository _userRepository;
         public GetUserQueryHandler(IUserRepository userRepository)
         {

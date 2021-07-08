@@ -5,8 +5,8 @@ namespace DevFreela.Core.Entities
 {
     public class User : BaseEntity
     {
-        protected User() {}
-        public User(string name, string email, DateTime birthDate, string password, string role) 
+        protected User() { }
+        public User(string name, string email, DateTime birthDate, string password, string role)
         {
             Name = name;
             Email = email;

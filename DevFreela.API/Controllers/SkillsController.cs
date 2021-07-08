@@ -1,12 +1,7 @@
 ﻿using DevFreela.Application.Commands.CreateSkill;
 using DevFreela.Application.Queries.GetAllSkills;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DevFreela.API.Controllers

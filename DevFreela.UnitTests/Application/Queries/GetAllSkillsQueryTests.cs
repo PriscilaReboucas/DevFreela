@@ -13,7 +13,7 @@ namespace DevFreela.UnitTests.Application.Queries
     public class GetAllSkillsQueryTests
     {
         [Fact]
-        public async Task ExistThreeSkills_Executed_ThreeSkillViewModel()
+        public async Task ExistThreeSkills_Executed_ThreeSkillViewModel() //padrão nomenclatura given_when_then
         {
             //Arrange
             var skills = new List<Skill>
@@ -38,7 +38,7 @@ namespace DevFreela.UnitTests.Application.Queries
             foreach (var skill in skills)
             {
                 var skillViewModel = skillsViewModel.SingleOrDefault(s => s.Description == skill.Description);
-                Assert.NotNull(skillViewModel); 
+                Assert.NotNull(skillViewModel);
             }
 
             skillRepository.Verify(sr => sr.GetAll(), Times.Once);

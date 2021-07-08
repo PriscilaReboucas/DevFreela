@@ -21,7 +21,8 @@ namespace DevFreela.API.Controllers
 
         [HttpPost]
         [Authorize(Roles = "client")]
-        public async Task<IActionResult> Post([FromBody] CreateProvidedServiceCommand command) {
+        public async Task<IActionResult> Post([FromBody] CreateProvidedServiceCommand command)
+        {
             var result = await _mediator.Send(command);
 
             return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
@@ -51,7 +52,7 @@ namespace DevFreela.API.Controllers
 
             await _mediator.Send(command);
 
-            return NoContent(); 
+            return NoContent();
         }
 
         [HttpPost("{id}/messages")]

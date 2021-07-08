@@ -3,7 +3,6 @@ using DevFreela.Core.Entities;
 using DevFreela.Core.Interfaces.Repositories;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DevFreela.Infrastructure.Persistence.Repositories
@@ -28,7 +27,7 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
                     "OUTPUT INSERTED.[Id] " +
                     "VALUES (@name,@email,@birthdate,@active,@password,@role,GETDATE())";
 
-               // quando as propriedade nao possuirem o mesmo nome da entidade
+                // quando as propriedade nao possuirem o mesmo nome da entidade
                 //var id = await sqlConnection.QuerySingleAsync<int>(sql,
                 //    new
                 //    {
@@ -40,7 +39,7 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
                 //        role = user.Role
                 //    });
 
-                var id = await sqlConnection.QuerySingleAsync<int>(sql, user) ;
+                var id = await sqlConnection.QuerySingleAsync<int>(sql, user);
 
 
                 // se a lista de skills tiver preenchida
@@ -50,9 +49,9 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
                 {
                     var totalRows = await sqlConnection.ExecuteAsync(insertSkills, new { IdUser = id, IdSkill = item.IdSkill });
 
-                }         
-              
-            }    
+                }
+
+            }
 
 
             //utilizando entity framework

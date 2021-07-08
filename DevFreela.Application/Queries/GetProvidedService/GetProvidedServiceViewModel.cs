@@ -1,21 +1,20 @@
 ﻿using DevFreela.Core.Enums;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DevFreela.Application.Queries.GetProvidedService
 {
     public class GetProvidedServiceViewModel
     {
         public GetProvidedServiceViewModel(
-            int id, 
-            string title, 
-            string description, 
-            int idClient, 
-            string client, 
-            int idFreelancer, 
-            string freelancer, 
-            decimal totalCost, 
+            int id,
+            string title,
+            string description,
+            int idClient,
+            string client,
+            int idFreelancer,
+            string freelancer,
+            decimal totalCost,
             DateTime? startedAt,
             DateTime? finishedAt,
             StatusProvidedServiceEnum status,

@@ -42,12 +42,12 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
         // utilizando o Dapper
         public async Task<List<Skill>> GetAll()
         {
-            
+
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
                 //utilizando o dapper
-                var sql = "SELECT Id, Description, CreatedAt FROM Skills";              
-                var result = await sqlConnection.QueryAsync<Skill>(sql);               
+                var sql = "SELECT Id, Description, CreatedAt FROM Skills";
+                var result = await sqlConnection.QueryAsync<Skill>(sql);
                 return result.ToList();
             }
 
